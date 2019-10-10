@@ -1,0 +1,10 @@
+.main_contents__chatspace__head
+  .main_contents__chatspace__head__user_name
+    = message.user.name
+  .main_contents__chatspace__head__time
+    = message.created_at.strftime("%Y/%m/%d %H:%M")
+.main_contents__chatspace__text
+  - if message.content.present?
+    %p.main_contents__chatspace__text__content
+      = message.content
+  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
