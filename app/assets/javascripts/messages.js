@@ -1,8 +1,8 @@
 $(function(){
   function buildGroup(message){
-    var image =  message.image ? `<img class="lower-message__image">
-    ${message.image} 
-    </img>` : "";
+    var image = ""
+     message.image ? image = `<img src="${message.image}">` : image = "" 
+    
     var html = `<div  class="main_contents__chatspace__head">
                   <div class="main_contents__chatspace__head__user_name">
                     ${message.user_name}
@@ -29,7 +29,6 @@ $(function(){
 
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    var url = $(this).attr('action');
 
     $.ajax({
 
@@ -43,9 +42,9 @@ $(function(){
     .done(function(message){
       var html = buildGroup(message);
       $(".main_contents__chatspace").append(html)
-      $('.main_contents__form__message').val("")
+      $('.main_contents__form__message')[0].reset();
+    
       $('.main_contents__form__submit').attr('disabled', false);
-      $('.main_contents__chatspace').animate({ scroll: 0});
       $('.main_contents__chatspace').animate({ scrollTop: $('.main_contents__chatspace')[0].scrollHeight});
     })
     .fail(function(){
