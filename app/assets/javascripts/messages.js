@@ -1,7 +1,6 @@
 $(function(){
   function buildGroup(message){
-    var image = ""
-     message.image ? image = `<img src="${message.image}">` : image = "" 
+    var image = message.image ? `<img src="${message.image}">` : ""; 
     
     var html = `<div  class="main_contents__chatspace__head">
                   <div class="main_contents__chatspace__head__user_name">
@@ -19,8 +18,6 @@ $(function(){
                   </p>
                     ${image}
                 </div>`
-    
-    
     
     return html;
   }
