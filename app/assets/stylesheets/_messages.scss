@@ -48,6 +48,7 @@
   height: calc(100vh - 100px);
   padding: 20px 20px 0;
   box-sizing: border-box;
+  overflow: scroll;
   &__group{
     margin: 0 0 40px;
 
@@ -113,7 +114,8 @@
    padding: 46px 40px;
    background-color: #fafafa;
    box-sizing: border-box;
-   height:calc(100% - 98px);
+   height:calc(100% - 98px - 90px);
+   overflow: auto;
   &__head{
     display: flex;
    &__user_name {
@@ -130,6 +132,7 @@
     color: #434a54;
     font-size: 14px;
     margin: 10px 0 40px 0;
+    
   }
  }
  &__form {
