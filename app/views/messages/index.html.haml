@@ -7,11 +7,16 @@
     .main_contents__header
       .main_contents__header__left
         .main_contents__header__left__title
-          =@group.name
+          = @group.name
         .main_contents__header__left__member
-          Member : aaaaaaaaaaaa
+          member :
+          - @group.users.each do |user| 
+            = user.name
+          
+
+
       .main_contents__header__right
-        =link_to "Edit", class: "main_contents__header__right__btn contents__main_contents__header__right__btn--edit"
+        = link_to "Edit", edit_group_path(@group) , class: "main_contents__header__right__btn contents__main_contents__header__right__btn--edit"
     
     .main_contents__chatspace
       = render @messages

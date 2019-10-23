@@ -28,7 +28,6 @@ $(function(){
     var url = $(this).attr('action');
 
     $.ajax({
-
       url: url,
       type: "POST",
       data: formData,
@@ -39,7 +38,6 @@ $(function(){
     .done(function(message){
       var html = buildGroup(message);
       $(".main_contents__chatspace").append(html)
-      $('.main_contents__form__message')[0].reset();
     
       $('.main_contents__form__submit').attr('disabled', false);
       $('.main_contents__chatspace').animate({ scrollTop: $('.main_contents__chatspace')[0].scrollHeight});
