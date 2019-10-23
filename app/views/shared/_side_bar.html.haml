@@ -4,7 +4,7 @@
     %ul.sidebar__user_name__icons
       %li.list
         = link_to new_group_path do
-          = fa_icon 'edit', class: "sidebar__user_name__icons__list--edit"
+          = fa_icon 'edit', class: "sidebar__user_name__icons__list--edit" ,method: :GET
           %span<>
       %li.list
         = link_to edit_user_path(current_user) do
