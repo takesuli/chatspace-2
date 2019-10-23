@@ -16,7 +16,6 @@ before_action :set_group,only: [:edit ,:update]
   end
 
   def edit
-    set_group
   end
     
   def update

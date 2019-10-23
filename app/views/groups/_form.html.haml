@@ -22,7 +22,7 @@
       %label.chat-group-form__label{for: "chat_group_チャットメンバー"} チャットメンバー
     .chat-group-form__field--right    
       
-      #user-member-list
+      
       %p.chat-group-user__name 
       - group.users.each do|user|
         #chat-group-user.chat-group-user.clearfix.js-chat-member
@@ -35,4 +35,5 @@
     .chat-group-form__field--left
     .chat-group-form__field--right
       = f.submit class: 'chat-group-form__action-btn'
-       
+
+     
