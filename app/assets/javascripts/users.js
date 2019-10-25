@@ -62,6 +62,9 @@ $(function() {
         $(this).parent().remove(); 
       })
 
+      $('#user-member-list').on ('click', '.chat-group-user__btn--remove' ,function(e){
+        $(this).parent().remove(); 
+      })
 
       $('#chat-group-user')
   });
