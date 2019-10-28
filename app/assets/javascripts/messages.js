@@ -2,7 +2,7 @@ $(function(){
   $(document).on('turbolinks:load', function() {
     function buildGroup(message){
       var text = message.content ? `${message.content}` : " " ; 
-      var image = message.image ? `<img class="main_contents_box" src="${message.image}">`: " ";
+      var image = message.image ? `<img class="lower-message__image" src="${message.image}">` : " " ;
       var html = `<div class="main_contents_box" data-message-id="${message.id}">
                     <div class="main_contents__chatspace__head">
                       <div class="main_contents__chatspace__head__user_name">
@@ -13,20 +13,20 @@ $(function(){
                       </div>
                     </div>
                     <div class="main_contents__chatspace__text">
-                      <p class="main_contents__chatspace__text">
+                      <p class="main_contents__chatspace__text--p">
                         ${text}
                       </p>
                         ${image}
                     </div>
                   </div>`
-    
       return html;
-    };
+    }
     $('#new_message').on('submit', function(e){
       e.preventDefault();
-
+      // console.log(this)
       var formData = new FormData(this);
       var url = $(this).attr('action');
+      // console.log(url)
 
       $.ajax({
         url: url,
@@ -68,11 +68,11 @@ $(function(){
           });
         })
         .fail(function() {
-          alert('error');      
+          alert('error2');      
         });
       }
     }
-    setInterval(reloadMessages, 5000);
+    // setInterval(reloadMessages, 5000);
   });
 });
 
