@@ -2,7 +2,7 @@ $(function(){
   $(document).on('turbolinks:load', function() {
     function buildGroup(message){
       var text = message.content ? `${message.content}` : " " ; 
-      var image = message.image ? `<img class="main_contents_box" src="${message.image}">`: " ";
+      var image = message.image ? `<img class="lower-message__image" src="${message.image}">`: " ";
       var html = `<div class="main_contents_box" data-message-id="${message.id}">
                     <div class="main_contents__chatspace__head">
                       <div class="main_contents__chatspace__head__user_name">
